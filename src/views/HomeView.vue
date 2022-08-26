@@ -1,6 +1,6 @@
 <template>
   <v-row>
-    <v-container class="side-panel">
+    <v-container class="side-panel mx-0 my-2">
       <v-row class="d-flex flex-column">
         <v-col>
           <v-list>
@@ -8,6 +8,7 @@
               <v-list-item
                 v-for="(tab, i) in tabs"
                 :key="i"
+                color="primary"
               >
                 <v-list-item-icon>
                   <v-icon v-text="tab.icon" />
@@ -36,7 +37,7 @@
     </v-container>
     <v-window
       v-model="currentTab"
-      class="ma-8"
+      class="my-16 mx-auto content-window overflow-auto"
     >
       <v-window-item>
         <cv-view />
@@ -80,13 +81,16 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 .side-panel {
-  margin: auto 0;
-  padding: 0;
   width: 20%;
   height: 100vh;
 
   .row {
     height: 100%;
   }
+}
+
+.content-window {
+  min-width: 400px;
+  max-width: 80%;
 }
 </style>
