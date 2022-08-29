@@ -9,6 +9,8 @@
 <script lang="ts">
 import Vue from 'vue'
 
+document.title = 'Brad Stone'
+
 export default Vue.extend({
   name: 'App',
 

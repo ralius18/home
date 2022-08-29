@@ -1,43 +1,66 @@
 <template>
-  <v-row>
-    <v-container class="side-panel mx-0 my-2">
-      <v-row class="d-flex flex-column">
-        <v-col>
-          <v-list>
-            <v-list-item-group v-model="currentTab">
-              <v-list-item
-                v-for="(tab, i) in tabs"
-                :key="i"
-                color="primary"
-              >
-                <v-list-item-icon>
-                  <v-icon v-text="tab.icon" />
-                </v-list-item-icon>
-                <v-list-item-content>
-                  <v-list-item-title v-text="tab.title"></v-list-item-title>
-                </v-list-item-content>
-              </v-list-item>
-            </v-list-item-group>
-          </v-list>
-        </v-col>
+  <v-row class="my-0">
+    <v-container class="side-panel ma-0 py-0">
+      <v-navigation-drawer
+        permanent
+        width="100%"
+      >
 
-        <v-spacer />
-
-        <v-col>
-          <v-row class="align-end">
+        <v-list>
+          <v-list-item class="px-2">
             <v-img
-              src="@/assets/images/github.svg"
-              contain
-              max-height="30"
-              width="30"
+              src="@/assets/images/brad-square3.jpg"
+              class="my-8 mx-16 rounded-circle"
+              aspect-ratio="1"
             />
-          </v-row>
-        </v-col>
-      </v-row>
+          </v-list-item>
+
+          <v-list-item>
+            <v-list-item-content class="text-center">
+              <v-list-item-title class="text-h6">
+                Brad Stone
+              </v-list-item-title>
+              <v-list-item-subtitle>Software Developer</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+
+        <v-divider class="my-8" />
+
+        <v-list>
+          <v-list-item-group
+            v-model="currentTab"
+          >
+            <v-list-item
+              v-for="(tab, i) in tabs"
+              :key="i"
+              link
+            >
+              <v-list-item-icon>
+                <v-icon v-text="tab.icon" />
+              </v-list-item-icon>
+              <v-list-item-content>
+                <v-list-item-title v-text="tab.title"></v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list-item-group>
+        </v-list>
+
+        <template #append>
+          <v-bottom-navigation>
+            <v-btn
+              href="https://github.com/ralius18"
+              target="_blank"
+            >
+              <v-icon>mdi-github</v-icon>
+            </v-btn>
+          </v-bottom-navigation>
+        </template>
+      </v-navigation-drawer>
     </v-container>
     <v-window
       v-model="currentTab"
-      class="my-16 mx-auto content-window overflow-auto"
+      class="ma-0 mx-auto content-window overflow-auto"
     >
       <v-window-item>
         <cv-view />
@@ -90,7 +113,20 @@ export default Vue.extend({
 }
 
 .content-window {
-  min-width: 400px;
-  max-width: 80%;
+  min-width: 60%;
+  max-width: 60%;
+
+  height: 100vh;
+  margin: 0 auto;
+
+  .v-card {
+    background-color: #121212;
+  }
+}
+
+.v-list-item--active::before {
+  background-color: var(--v-primary-base);
+  opacity: 1;
+  z-index: -100;
 }
 </style>
