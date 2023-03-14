@@ -1,22 +1,24 @@
 <template>
   <v-card
     flat
-    class="ma-16"
+    :class="this.$vuetify.breakpoint.lgAndUp ? 'ma-16' : 'my-16'"
   >
     <h1 class="mb-2">{{ name }}</h1>
 
     <v-row class="mb-4">
       <v-col class="align-center">
-        <v-icon class="mr-4">mdi-phone</v-icon>{{ phone }}<br />
-        <v-icon class="mr-4">mdi-email</v-icon><a :href="`mailto:${this.email}`">{{ email }}</a>
-      </v-col>
-
-      <v-spacer />
-
-      <v-col class="text-right">
-        <v-container>
-          Napier, New Zealand<v-icon class="ml-4">mdi-map-marker</v-icon>
-        </v-container>
+        <v-icon class="mr-4">mdi-phone</v-icon>
+          <a
+            v-if="this.$vuetify.breakpoint.mdAndDown"
+            :href="`tel:${this.phone}`"
+          >{{ phone }}</a>
+        <span v-else>
+          {{ phone }}
+        </span><br />
+        <v-icon class="mr-4">mdi-email</v-icon>
+          <a :href="`mailto:${this.email}`">{{ email }}</a><br />
+        <v-icon class="mr-4">mdi-map-marker</v-icon>
+          Napier, New Zealand
       </v-col>
     </v-row>
 

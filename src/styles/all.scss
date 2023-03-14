@@ -5,3 +5,21 @@
 hr {
   border-color: var(--v-primary-base) !important;
 }
+
+.v-application a {
+  color: unset !important;
+}
+
+.v-card__title {
+  word-break: normal !important;
+}
+
+// ::-webkit-scrollbar {
+//   background-color: transparent;
+//   width: 5px;
+
+//   ::-webkit-scrollbar-thumb {
+//     background-color: white;
+//   }
+// }
+

@@ -1,11 +1,20 @@
 <template>
-  <v-row class="my-0">
-    <v-container class="side-panel ma-0 py-0">
-      <v-navigation-drawer
-        permanent
-        width="100%"
+  <v-row class="ma-0">
+    <v-container class="side-panel ma-0 pa-0" :class="isMobile ? 'mobile' : ''">
+      <v-btn
+        v-if="isMobile"
+        class="ma-2 nav-btn"
+        @click.stop="drawer = !drawer"
       >
-
+        <v-icon>mdi-menu</v-icon>
+      </v-btn>
+      <v-navigation-drawer
+        :permanent="!isMobile"
+        :temporary="isMobile"
+        :absolute="isMobile"
+        width="100%"
+        v-model="drawer"
+      >
         <v-list>
           <v-list-item class="px-2">
             <v-img
@@ -22,7 +31,6 @@
                 Brad Stone
               </v-list-item-title>
               <v-list-item-subtitle>Software Developer</v-list-item-subtitle>
-              <v-list-item-subtitle>Musician</v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
 
@@ -70,6 +78,7 @@
               v-for="(tab, i) in tabs"
               :key="i"
               link
+              @click.stop="drawer = !drawer"
             >
               <v-list-item-icon>
                 <v-icon>{{ tab.icon }}</v-icon>
@@ -84,7 +93,8 @@
     </v-container>
     <v-window
       v-model="currentTab"
-      class="ma-0 mx-auto content-window overflow-auto"
+      class="ma-0 mx-auto content-window"
+      :class="isMobile ? 'mobile' + (drawer ? ' hidden' : '') : 'overflow-auto'"
     >
       <v-window-item>
         <cv-view />
@@ -116,6 +126,7 @@ export default Vue.extend({
 
   data () {
     return {
+      drawer: this.$vuetify.breakpoint.lgAndUp,
       tabs: [
         {
           title: 'CV',
@@ -126,7 +137,8 @@ export default Vue.extend({
           icon: 'mdi-music-note'
         }
       ],
-      currentTab: 0
+      currentTab: 0,
+      isMobile: this.$vuetify.breakpoint.mdAndDown
     }
   }
 })
@@ -136,9 +148,17 @@ export default Vue.extend({
 .side-panel {
   width: 20%;
   height: 100vh;
+  position: sticky;
+  top: 0;
+  left: 0;
 
   .row {
     height: 100%;
+  }
+
+  &.mobile {
+    width: 100%;
+    position: absolute;
   }
 }
 
@@ -146,11 +166,12 @@ export default Vue.extend({
   min-width: 60%;
   max-width: 60%;
 
-  height: 100vh;
-  margin: 0 auto;
-
   .v-card {
     background-color: v-bind('cardBackgroundColor');
+  }
+
+  &.mobile {
+    max-width: 80%;
   }
 }
 
@@ -166,5 +187,9 @@ export default Vue.extend({
   &:hover {
     background-color: var(--v-primary-base);
   }
+}
+
+.nav-btn {
+  z-index: 10;
 }
 </style>

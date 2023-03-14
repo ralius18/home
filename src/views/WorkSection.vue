@@ -42,7 +42,7 @@ export default Vue.extend({
         {
           title: 'Technical Support and Sales',
           company: 'NOW NZ',
-          dates: ['May 2018 ', 'December 2019'],
+          dates: ['May 2018 ', 'December 2018'],
           description: 'This was my starting point in the IT industry after graduating from university. I worked as technical support, answering phone calls and helping customers with their phone and internet issues. NOW’s main point of difference is the customer service provided, so it was extremely advantageous for a technically minded person such as myself to be customer facing and talk people through issues. I gained knowledge and experience in delivery of internet and phone lines along with basic troubleshooting of network connection issues.'
         },
         {

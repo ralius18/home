@@ -1,5 +1,8 @@
 <template>
-  <v-card flat class="ma-16">
+  <v-card
+    flat
+    :class="$vuetify.breakpoint.lgAndUp ? 'ma-16' : 'my-16'"
+  >
     <h1 class="mb-2">Music</h1>
 
     <v-card-text>
@@ -10,6 +13,7 @@
       <v-col
         v-for="artist in artists"
         v-bind:key="artist.name"
+        :cols="$vuetify.breakpoint.mdAndDown ? 12 : 6"
       >
         <v-card>
           <v-card-title>
