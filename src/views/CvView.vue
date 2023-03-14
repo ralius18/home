@@ -1,11 +1,14 @@
 <template>
-  <v-card flat class="ma-16">
+  <v-card
+    flat
+    class="ma-16"
+  >
     <h1 class="mb-2">{{ name }}</h1>
 
     <v-row class="mb-4">
       <v-col class="align-center">
         <v-icon class="mr-4">mdi-phone</v-icon>{{ phone }}<br />
-        <v-icon class="mr-4">mdi-email</v-icon><router-link :to="`mailto:${ email }`">{{ email }}</router-link>
+        <v-icon class="mr-4">mdi-email</v-icon><a :href="`mailto:${this.email}`">{{ email }}</a>
       </v-col>
 
       <v-spacer />

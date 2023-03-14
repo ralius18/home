@@ -2,7 +2,6 @@
   <v-container>
     <v-card
       class="mb-8"
-      elevation="16"
     >
       <v-card-title>Bachelor of Science</v-card-title>
       <v-card-subtitle>(major in Computer Science) 2015 - 2017<br/>
@@ -24,7 +23,6 @@
 
     <v-card
       class="mb-8"
-      elevation="16"
     >
       <v-card-title>NCEA</v-card-title>
       <v-card-subtitle>Taradale High School, Napier, New Zealand</v-card-subtitle>

@@ -3,6 +3,10 @@ import App from './App.vue'
 import router from './router'
 import vuetify from './plugins/vuetify'
 
+import MdiIcon from './components/MdiIcon.vue'
+
+Vue.component('MdiIcon', MdiIcon)
+
 Vue.config.productionTip = false
 
 new Vue({

@@ -12,6 +12,7 @@
               src="@/assets/images/brad-square3.jpg"
               class="my-8 mx-16 rounded-circle"
               aspect-ratio="1"
+              border
             />
           </v-list-item>
 
@@ -21,7 +22,41 @@
                 Brad Stone
               </v-list-item-title>
               <v-list-item-subtitle>Software Developer</v-list-item-subtitle>
+              <v-list-item-subtitle>Musician</v-list-item-subtitle>
             </v-list-item-content>
+          </v-list-item>
+
+          <v-list-item>
+            <v-row justify="center">
+              <v-btn
+                href="https://github.com/ralius18"
+                target="_blank"
+                class="mx-2"
+              >
+                <v-icon>mdi-github</v-icon>
+              </v-btn>
+              <v-btn
+                href="https://www.linkedin.com/in/brad-stone-872b0b139/"
+                target="_blank"
+                class="mx-2"
+              >
+                <v-icon>mdi-linkedin</v-icon>
+              </v-btn>
+            </v-row>
+          </v-list-item>
+
+          <v-list-item>
+            <v-row justify="center">
+              <v-switch
+                v-model="$vuetify.theme.dark"
+                class="mx-auto"
+                hide-details
+              >
+                <template #label>
+                  <mdi-icon>{{ $vuetify.theme.dark ? "dark_mode" : "light_mode" }}</mdi-icon>
+                </template>
+              </v-switch>
+            </v-row>
           </v-list-item>
         </v-list>
 
@@ -37,25 +72,14 @@
               link
             >
               <v-list-item-icon>
-                <v-icon v-text="tab.icon" />
+                <v-icon>{{ tab.icon }}</v-icon>
               </v-list-item-icon>
               <v-list-item-content>
-                <v-list-item-title v-text="tab.title"></v-list-item-title>
+                <v-list-item-title>{{ tab.title }}</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </v-list-item-group>
         </v-list>
-
-        <template #append>
-          <v-bottom-navigation>
-            <v-btn
-              href="https://github.com/ralius18"
-              target="_blank"
-            >
-              <v-icon>mdi-github</v-icon>
-            </v-btn>
-          </v-bottom-navigation>
-        </template>
       </v-navigation-drawer>
     </v-container>
     <v-window
@@ -84,12 +108,18 @@ export default Vue.extend({
     MusicView, CvView
   },
 
+  computed: {
+    cardBackgroundColor () {
+      return this.$vuetify.theme.dark ? '#121212' : '#FFFFFF'
+    }
+  },
+
   data () {
     return {
       tabs: [
         {
-          title: 'Home',
-          icon: 'mdi-home'
+          title: 'CV',
+          icon: 'mdi-account'
         },
         {
           title: 'Music',
@@ -120,13 +150,21 @@ export default Vue.extend({
   margin: 0 auto;
 
   .v-card {
-    background-color: #121212;
+    background-color: v-bind('cardBackgroundColor');
   }
 }
 
-.v-list-item--active::before {
-  background-color: var(--v-primary-base);
-  opacity: 1;
-  z-index: -100;
+.v-list-item--active {
+  color: white;
+
+  &::before {
+    background-color: var(--v-primary-base);
+    opacity: 1;
+    z-index: -100;
+  }
+
+  &:hover {
+    background-color: var(--v-primary-base);
+  }
 }
 </style>
