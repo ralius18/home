@@ -8,7 +8,7 @@
         {{ name }}
         <v-spacer />
         <v-btn
-          @click="print"
+          href="https://drive.google.com/file/d/1suWI0XfxwGpOfbcpHiflRGGHpStLpPcl/view?usp=sharing"
           target="_blank"
           class="download mx-2"
         >
