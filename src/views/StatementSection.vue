@@ -3,10 +3,10 @@
     <v-card>
       <v-card-text>
         As a software developer, I am passionate about creating innovative solutions that make a difference in people's lives.
-        With years of experience in the industry, I have developed a strong foundation in programming languages such as C#, JavaScript and Ruby
-        as well as a focus on software development methodologies such as Agile and Scrum.
+        I have lately focused on growing in Front-End and UX development as I thoroughly enjoy seeing the positive impact it can make.
+        With years of experience in the industry, I have evolved a strong foundation in programming languages such as C#, JavaScript and Ruby
+        as well as a focus on software development methodologies like Agile and Scrum.
         I am also a lifelong learner, always looking for ways to improve my skills and bring new ideas to my work.
-        I thoroughly enjoy working on front-end ideas and user experience to make a positive impact on people.
         <br />
         <br />
         I am also very interested in the world of music and audio production.

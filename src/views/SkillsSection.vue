@@ -2,23 +2,20 @@
   <v-container>
    <v-card>
       <v-card-text>
-        I have primarily developed in object-oriented languages, but have taken an interest in scripting styles such as
-        Ruby after learning them in a professional environment. I have touched on a variety of other languages and
+        I have primarily developed in object-oriented languages along with shifting to a more front-end focus, but have also
+        taken an interest in scripting styles such as Ruby. I have touched on a variety of other languages and
         concepts briefly in different university courses and projects.
-        <v-row class="my-0" justify="center">
+        <div class="py-2 font-weight-bold">Technologies used</div>
+        <v-row
+          class="skills my-0 mx-4 flex-column flex-shrink-1"
+          :class="$vuetify.breakpoint.mdAndDown ? 'mobile' : ''"
+          justify="center"
+        >
           <v-col
-            v-for="(type, i) in skills"
-            :key="i"
+            v-for="(skill, j) in skills"
+            :key="j"
           >
-            <v-list>
-              <v-list-item-title>{{ type.title }}</v-list-item-title>
-              <v-list-item
-                v-for="(skill, j) in type.list"
-                :key="j"
-              >
-                {{ skill }}
-              </v-list-item>
-            </v-list>
+            {{ skill }}
           </v-col>
         </v-row>
       </v-card-text>
@@ -33,34 +30,49 @@ export default Vue.extend({
 
   data () {
     return {
-      skills: {
-        professional: {
-          title: 'Worked with professionally',
-          list: [
-            'C#',
-            '.NET',
-            'Javascript',
-            'CSS',
-            'Ruby',
-            'RESTful',
-            'Linux Systems',
-            'HTML',
-            'Vue',
-            'Sencha',
-            'SQL'
-          ].sort()
-        },
-        studied: {
-          title: 'Studied in university',
-          list: [
-            'Java',
-            'C',
-            'C++',
-            'Python'
-          ].sort()
-        }
-      }
+      skills: [
+        'C#',
+        '.NET',
+        'Javascript',
+        'CSS',
+        'Ruby',
+        'RESTful',
+        'Linux Systems',
+        'HTML',
+        'Vue',
+        'Sencha',
+        'SQL',
+        'ASP.NET MVC',
+        'Azure DevOps',
+        'Java',
+        'C++',
+        'Python',
+        'Git',
+        'jQuery',
+        'Redmine',
+        'TypeScript'
+      ].sort(function (a, b) {
+        return a.toLowerCase().localeCompare(b.toLowerCase())
+      })
     }
   }
 })
 </script>
+
+<style lang="scss" scoped>
+.skills {
+  max-height: 250px;
+
+  .col {
+    width: 25%;
+  }
+
+  &.mobile {
+    max-height: 600px;
+
+    .col {
+      width: 50%;
+    }
+  }
+}
+</style>

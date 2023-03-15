@@ -44,7 +44,7 @@
                 <v-icon>mdi-github</v-icon>
               </v-btn>
               <v-btn
-                href="https://www.linkedin.com/in/brad-stone-872b0b139/"
+                href="https://www.linkedin.com/in/brad-stone-dev/"
                 target="_blank"
                 class="mx-2"
               >
@@ -145,6 +145,19 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
+@media print {
+  .side-panel {
+    display: none;
+  }
+
+  .content-window {
+    min-width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
 .side-panel {
   width: 20%;
   height: 100vh;

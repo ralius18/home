@@ -31,7 +31,7 @@ export default Vue.extend({
           title: 'Software Developer',
           company: 'Re-Leased',
           dates: ['June 2021', 'March 2023'],
-          description: 'I joined Re-Leased as a junior developer until I got comfortable to the new and different stack than I was used to. This introduced me to working in an Agile development and using Git to its full potential as a development process. Re-Leased develops commercial property management software for clients to manage their real estate portfolios, so while the scope of this business is narrower, there was still a lot to explore and learn. This role taught me a lot about working in a larger scale software business and got me used to the practices of web development.'
+          description: 'I joined Re-Leased as a junior developer until I got comfortable to the new and different stack than I was used to. This introduced me to working in an Agile development and using Git to its full potential as a development process. Re-Leased develops commercial property management software for clients to manage their real estate portfolios, so while the scope of this business is narrower, there was still a lot to explore and learn. This Full Stack role taught me a lot about working in a larger scale software business and got me used to the practices of web development.'
         },
         {
           title: 'Software Developer',

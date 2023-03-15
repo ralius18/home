@@ -3,7 +3,19 @@
     flat
     :class="this.$vuetify.breakpoint.lgAndUp ? 'ma-16' : 'my-16'"
   >
-    <h1 class="mb-2">{{ name }}</h1>
+    <h1 class="mb-2">
+      <v-row>
+        {{ name }}
+        <v-spacer />
+        <v-btn
+          @click="print"
+          target="_blank"
+          class="download mx-2"
+        >
+          <v-icon>mdi-download</v-icon>
+        </v-btn>
+      </v-row>
+    </h1>
 
     <v-row class="mb-4">
       <v-col class="align-center">
@@ -16,7 +28,9 @@
           {{ phone }}
         </span><br />
         <v-icon class="mr-4">mdi-email</v-icon>
-          <a :href="`mailto:${this.email}`">{{ email }}</a><br />
+        <a :href="`mailto:${this.email}`">
+          {{ email }}
+        </a><br />
         <v-icon class="mr-4">mdi-map-marker</v-icon>
           Napier, New Zealand
       </v-col>
@@ -50,11 +64,6 @@
       <v-card-title>Referees</v-card-title>
       <v-card-text>Referees available on request</v-card-text>
     </v-card>
-
-      <!--
-        TODO: Get in touch button
-        Download PDF
-      -->
   </v-card>
 </template>
 
@@ -79,6 +88,19 @@ export default Vue.extend({
       phone: '021 548 635',
       email: 'Brayds97@Gmail.com'
     }
+  },
+  methods: {
+    print () {
+      window.print()
+    }
   }
 })
 </script>
+
+<style lang="scss">
+@media print {
+  .download {
+    display: none;
+  }
+}
+</style>
