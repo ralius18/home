@@ -14,6 +14,18 @@ hr {
   word-break: normal !important;
 }
 
+.theme--light.v-card {
+  > .v-card__text {
+    color: black !important;
+  }
+}
+
+.theme--dark.v-card {
+  > .v-card__text {
+    color: white !important;
+  }
+}
+
 .row {
   margin: unset !important;
 }
