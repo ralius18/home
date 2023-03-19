@@ -4,7 +4,7 @@
       <v-card-text>
         I have primarily developed in object-oriented languages along with shifting to a more front-end focus, but have also
         taken an interest in scripting styles such as Ruby. I have touched on a variety of other languages and
-        concepts briefly in different university courses and projects.
+        concepts briefly in different university courses and side-projects.
         <div class="py-2 font-weight-bold">Technologies used</div>
         <v-row
           class="skills my-0 mx-4 flex-column flex-shrink-1"
@@ -45,7 +45,6 @@ export default Vue.extend({
         'ASP.NET MVC',
         'Azure DevOps',
         'Java',
-        'C++',
         'Python',
         'Git',
         'jQuery',

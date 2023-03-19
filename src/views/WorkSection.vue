@@ -6,15 +6,21 @@
       class="mb-8"
     >
       <v-card-title>
-        {{ job.title }} - {{ job.company }}
+        {{ job.title }}&nbsp;-&nbsp;<a :href="job.website" target="_blank">{{ job.company }}</a><v-icon small class="ml-2">mdi-open-in-new</v-icon>
       </v-card-title>
       <v-card-subtitle>
         {{ job.dates[0] }} - {{ job.dates[1] }}
       </v-card-subtitle>
-      <v-card-text>
-        {{ job.description }}
+      <v-card-text v-show="job.detailsVisible">
+        <v-row class="mb-4">
+          <div class="font-weight-bold font-italic">About {{ job.company }}</div>
+          {{ job.companyDescription }}
+        </v-row>
+        <v-row>
+          <span class="font-weight-bold font-italic">About the role</span>{{ job.description }}
+        </v-row>
       </v-card-text>
-    </v-card>
+  </v-card>
   </v-container>
 </template>
 <script lang="ts">
@@ -28,37 +34,38 @@ export default Vue.extend({
     return {
       jobs: [
         {
+          detailsVisible: true,
           title: 'Software Developer',
           company: 'Re-Leased',
           dates: ['June 2021', 'March 2023'],
-          description: 'I joined Re-Leased as a junior developer until I got comfortable to the new and different stack than I was used to. This introduced me to working in an Agile development and using Git to its full potential as a development process. Re-Leased develops commercial property management software for clients to manage their real estate portfolios, so while the scope of this business is narrower, there was still a lot to explore and learn. This Full Stack role taught me a lot about working in a larger scale software business and got me used to the practices of web development.'
+          website: 'https://re-leased.com',
+          companyDescription: 'Re-Leased is a cloud-based commercial property management software solution. Designed for property owners and managers of both residential and commercial property. With an easy-to-use dashboard and automated workflows, Re-Leased lets customers focus on growing their business whilst mitigating risks associated with managing commercial properties.',
+          description: 'I joined as a junior developer and worked my way up to a Full Stack role. This introduced me to benefits such as working in an Agile environment and using Git to its full potential as a development process. This role taught me a lot about working in a larger scale software business and the practices of web development.'
         },
         {
+          detailsVisible: true,
           title: 'Software Developer',
           company: 'MAGIQ Software',
           dates: ['January 2019', 'June 2021'],
-          description: 'Throughout this job, I learned how to develop software in a professional environment. I put my university training as a software developer to the test, learned new languages and gained a more in depth understanding of computing systems from a software perspective. This job mainly consisted of projects requiring integration of third party apps, product development and bug fixing. The software is a modular based enterprise system covering broad areas such as financing, regulatory systems and reporting. This required me to learn about a wide range of topics relevant to our main clients of local councils.'
+          website: 'https://magiqsoftware.com',
+          companyDescription: 'MAGIQ provides Cloud finance and business administration software for the Public Sector. The modular based ERP system is used in key markets such as Local Government, Health & Community Services, Utilities, Education and Not for Profit.',
+          description: 'This was my first post-university software development role developing software in a professional environment. I learned new languages and gained a more in depth understanding of computing systems from a software perspective. This role mainly consisted of projects requiring integration of third party apps, product development and bug fixing. Due to the system covering broad areas such as financing, regulatory systems and reporting, it required me to learn about a wide range of topics relevant to our main clients of local councils.'
         },
         {
+          detailsVisible: true,
           title: 'Technical Support and Sales',
           company: 'NOW NZ',
           dates: ['May 2018 ', 'December 2018'],
-          description: 'This was my starting point in the IT industry after graduating from university. I worked as technical support, answering phone calls and helping customers with their phone and internet issues. NOW’s main point of difference is the customer service provided, so it was extremely advantageous for a technically minded person such as myself to be customer facing and talk people through issues. I gained knowledge and experience in delivery of internet and phone lines along with basic troubleshooting of network connection issues.'
-        },
-        {
-          title: 'IT Helpdesk Student',
-          company: 'Pan Pac Forest Products Ltd.',
-          dates: ['July 2017', 'August 2017'], // Nov 2015 - Feb 2016, Jun 2016 - Jul 2016, Nov 2016 - Feb 2017
-          description: 'In this job, I initially worked on training documentation for a new version of a system that was being introduced, and assisted the IT staff in various small projects. My role developed into becoming a member of the helpdesk team and problem solving for users at the company. I learned how an IT department is run in an industrial environment and what skills are important to keep it running efficiently, such as communication and organisation.'
-        },
-        {
-          title: 'Laboratory Assistant',
-          company: 'Higgins Contractors HB Laboratory',
-          dates: ['December 2014', 'February 2015'],
-          description: 'I started this job as part of a voluntary program run by Hastings District Council to get school students out into the workforce to gain experience in the workplace. I was then offered a full time position over the 2014/15 holiday period. I learned the basic scientific method behind simple tests in the road construction industry, as well as the significance of health & safety in the workplace.'
+          website: 'https://nownz.co.nz',
+          companyDescription: 'NOW NZ is a New Zealand based broadband and business communication provider who take service seriously with local customer and technical service teams.',
+          description: 'This was my starting point in the IT industry after graduating from university. The role comprised of remote-based customer technical support, assisting customers with various technical issues. NOW\'s main point of difference is the customer service provided, so it was extremely advantageous for a technically minded person such as myself to be customer facing and talk people through issues.'
         }
       ] as Job[]
     }
+  },
+
+  methods: {
+
   }
 })
 </script>
