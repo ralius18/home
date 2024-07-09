@@ -35,10 +35,20 @@ export default Vue.extend({
       jobs: [
         {
           detailsVisible: true,
+          title: 'Software Engineer',
+          company: 'Xero',
+          dates: ['April 2024', 'Present'],
+          duration: 'Current',
+          website: 'https://xero.com',
+          companyDescription: 'Xero is a global small business platform which includes a core accounting solution, payroll, workforce management, expenses and projects. Xero also has an extensive ecosystem of connected apps and connections to banks and other financial institutions helping small businesses access a range of solutions to help them run their business and manage their finances.',
+          description: 'As a Software Engineer at Xero, I focused on back-end development, particularly in modernising the expenses platform. I helped the team with transitioning the expenses system to use Temporal workflows, which significantly enhanced its efficiency, scalability and reliability of the expenses platform. This role has allowed me to expand my skills in software architecture, workflow automation and continuous improvement, contributing to the overall success and innovation at Xero.'
+        },
+        {
+          detailsVisible: true,
           title: 'Junior Data Technician',
           company: 'Cablenet',
           dates: ['December 2023', 'April 2024'],
-          duration: '5 months',
+          duration: '6 months',
           website: 'https://advancedgroup.co.nz/cablenet-home/',
           companyDescription: 'Cablenet is part of the wider Advanced Group specialising in data cable installation for commercial customers, covering all types of ICT projects, from time critical nationwide technical rollouts, to large scale data, wireless, nurse call systems, audio visual and electrical contracts.',
           description: 'This role interested me to learn more about the physical side of networking and gain an understanding of the process behind installing infrastructure.I started as a junior without knowing much about the job but learned very quickly to be able to run cables, fit off fixtures and other small jobs by myself as well as assisting senior technicians in the more complicated tasks'
