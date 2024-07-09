@@ -3,8 +3,9 @@
     <v-card>
       <v-card-text>
         I am a resourceful and adaptable Intermediate Software Developer with 5 years experience in a wide range of technologies.
-        I have had a recent focus on Front-End and UX development as I thoroughly enjoy seeing the positive impact it can make.
-        As a lifelong learner, I am always looking for ways to improve my skills and bring new ideas to my work.
+        I particularly enjoy working on Front-End and UX development as I thoroughly enjoy seeing the positive impact it can make.
+        With most of my experience being as a Full-Stack developer, I am also very comfortable working on Back-End projects as well.
+        As a lifelong learner, I am always looking for ways to improve my skills and bring new ideas and approaches to my work. 
         <!-- <br />
         <br />
         I am also very interested in the world of music and audio production.
